@@ -22,8 +22,19 @@ type NavBarProps = {
 export default function NavBar({ active = "/" }: NavBarProps) {
   return (
     <header className={styles.nav}>
-      <Link className={styles.logo} href="/">
-        KAF-AfCFTA Gateway
+      {/* Co-brand lockup: the two partners set either side of a rule, weighted
+          so KAF leads. aria-label carries the spoken name, since the divider is
+          decorative and the two spans would otherwise run together. */}
+      <Link
+        className={styles.logo}
+        href="/"
+        aria-label="KAF and UM6P Gateway — home"
+      >
+        <span className={styles.logoPrimary}>KAF</span>
+        <span className={styles.logoDivider} aria-hidden="true" />
+        <span className={styles.logoSecondary}>
+          UM6P <span className={styles.logoDescriptor}>Gateway</span>
+        </span>
       </Link>
 
       <nav className={styles.links}>
