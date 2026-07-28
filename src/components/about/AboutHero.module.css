@@ -1,0 +1,66 @@
+/* About Hero (pycYp): white fill, 64/104 padding, 768px content column. */
+.hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background: var(--white);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 48rem;
+  max-width: 100%;
+}
+
+/*
+ * The design spaces these with wrapper frames rather than a gap, so each block
+ * carries its own trailing padding: 8, 24 and 40 respectively.
+ */
+.label {
+  padding-bottom: 0.5rem;
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--secondary-container);
+}
+
+.title {
+  padding-bottom: 1.5rem;
+  font-size: var(--text-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.17;
+  color: var(--primary);
+}
+
+.desc {
+  padding-bottom: 2.5rem;
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.56;
+  color: var(--on-surface-variant);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+}
+
+.badgeText {
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--on-surface);
+}

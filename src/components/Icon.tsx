@@ -6,15 +6,21 @@
 export const ICONS = [
   "arrow_forward",
   "calendar_today",
+  "check_circle",
   "chevron_right",
   "handshake",
+  "hub",
+  "language",
   "mail",
   "open_in_new",
   "payments",
   "person_search",
+  "public",
   "rocket_launch",
   "search",
+  "shield",
   "verified",
+  "verified_user",
   "video_call",
 ] as const;
 

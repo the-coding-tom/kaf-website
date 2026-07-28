@@ -1,23 +1,52 @@
+import Link from "next/link";
 import Icon from "./Icon";
 import styles from "./NavBar.module.css";
 
-const LINKS = ["About", "Opportunities", "Events"];
+/**
+ * `href: null` marks a destination whose design exists in Pencil but has no
+ * route yet — it renders as plain text rather than a dead link that 404s.
+ * Give it a path here once the page is built.
+ */
+const LINKS: { label: string; href: string | null }[] = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Opportunities", href: null },
+  { label: "Events", href: null },
+];
 
-export default function NavBar() {
+type NavBarProps = {
+  /** Route of the page this nav sits on; picks out the underlined tab. */
+  active?: string;
+};
+
+export default function NavBar({ active = "/" }: NavBarProps) {
   return (
     <header className={styles.nav}>
-      <span className={styles.logo}>KAF-AfCFTA Gateway</span>
+      <Link className={styles.logo} href="/">
+        KAF-AfCFTA Gateway
+      </Link>
 
       <nav className={styles.links}>
-        <a className={styles.activeTab} href="#" aria-current="page">
-          <span className={styles.activeLabel}>Home</span>
-          <span className={styles.activeUnderline} />
-        </a>
-        {LINKS.map((label) => (
-          <a key={label} className={styles.link} href="#">
-            {label}
-          </a>
-        ))}
+        {LINKS.map(({ label, href }) => {
+          if (href === active) {
+            return (
+              <span key={label} className={styles.activeTab} aria-current="page">
+                <span className={styles.activeLabel}>{label}</span>
+                <span className={styles.activeUnderline} />
+              </span>
+            );
+          }
+
+          return href ? (
+            <Link key={label} className={styles.link} href={href}>
+              {label}
+            </Link>
+          ) : (
+            <span key={label} className={styles.link}>
+              {label}
+            </span>
+          );
+        })}
       </nav>
 
       <div className={styles.right}>

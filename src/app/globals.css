@@ -33,10 +33,11 @@
   --outline-variant: #c6c6cd;
   --white: #ffffff;
 
-  /* Literal colours used inline in the design (Roadmap section) */
+  /* Literal colours used inline in the design (Roadmap, About sections) */
   --on-primary-muted: #ffffffcc;
   --roadmap-step-fill: #c6c6cd33;
   --roadmap-connector: #76777d4d;
+  --model-divider: #76777d33;
 
   /* Type --------------------------------------------------------------- */
   --font-body: var(--font-sans), "Inter", system-ui, sans-serif;

@@ -1,0 +1,87 @@
+/* Mandates Section (JPVfg): five equal cards in a row. */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background: var(--surface-container-high);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--on-surface);
+}
+
+.subtitle {
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.grid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--outline-variant);
+}
+
+/* Spaced by trailing padding rather than a gap, matching the design's
+   wrapper frames: 8px under the abbreviation, 16px under the name. */
+.abbr {
+  padding-bottom: 0.5rem;
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--secondary-container);
+}
+
+.name {
+  padding-bottom: 1rem;
+  font-size: var(--text-lead);
+  font-weight: 700;
+  line-height: 1.56;
+  color: var(--on-surface);
+}
+
+.desc {
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.33;
+  color: var(--on-surface-variant);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 calc(33.333% - 1rem);
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    flex: 1 1 100%;
+  }
+}

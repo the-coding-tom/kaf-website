@@ -1,11 +1,8 @@
 /*
- * Root frame "KAF-AfCFTA Gateway" (sVVO9): 1545px wide, vertical layout,
- * clipped, surface fill.
+ * The design frame every page sits in: vertical layout, centred, clipped.
  *
- * The frame fills the viewport up to --page-max (the design's own 1545px) and
- * is centred beyond it. Every length inside is rem against a 16px root, so at
- * that width the render is 1:1 with the Pencil frame; below it the sections
- * re-flow through the breakpoints in globals.css.
+ * Fills the viewport up to --page-max and centres beyond it. Every length
+ * inside is rem against the root size in globals.css.
  */
 .page {
   display: flex;
@@ -14,7 +11,7 @@
   max-width: var(--page-max);
   margin: 0 auto;
   /*
-   * `clip`, not `hidden`. Both contain the design frame horizontally, but
+   * `clip`, not `hidden`. Both contain the frame horizontally, but
    * `overflow: hidden` makes this element a scroll container, which would
    * become the containing block for the sticky nav — the header would then pin
    * to this box and scroll away with the document instead of the viewport.
