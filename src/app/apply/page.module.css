@@ -1,0 +1,30 @@
+/*
+ * The design draws this page to an 80px gutter rather than the 104px the rest
+ * of the site uses. Overriding the custom property on the frame rescopes it for
+ * every section inside, nav and footer included, without any of them needing to
+ * know about it.
+ */
+.shell {
+  --section-padding-x: 5rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Main Content (ekjtS): form column beside the 360px info rail. */
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+@media (max-width: 1000px) {
+  .content {
+    flex-direction: column;
+  }
+}

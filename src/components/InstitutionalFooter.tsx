@@ -1,5 +1,5 @@
-import Icon, { type IconName } from "../Icon";
-import styles from "./DirectoryFooter.module.css";
+import Icon, { type IconName } from "./Icon";
+import styles from "./InstitutionalFooter.module.css";
 
 const ICONS: IconName[] = ["public", "business_center", "verified_user"];
 
@@ -11,7 +11,7 @@ const COLUMNS: { heading: string; links: string[] }[] = [
   },
 ];
 
-export default function DirectoryFooter() {
+export default function InstitutionalFooter() {
   return (
     <footer className={styles.footer}>
       <div className={styles.left}>

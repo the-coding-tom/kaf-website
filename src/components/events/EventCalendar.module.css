@@ -1,0 +1,144 @@
+/* Calendar Section (z6Hbh): three event cards, a hairline, then Load More. */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--event-card-border);
+}
+
+/* Only the middle card carries the accent rule in the design. */
+.cardAccented {
+  box-shadow:
+    inset 0 0 0 1px var(--event-card-border),
+    inset 4px 0 0 0 var(--secondary-container);
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 12rem;
+}
+
+/* Tear-off calendar chip over the photograph's top-left corner. */
+.dateBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.125rem;
+  background: var(--scrim-strong);
+}
+
+.day {
+  font-size: var(--text-title);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--on-surface);
+}
+
+.month {
+  font-size: var(--text-nano);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--on-surface);
+}
+
+.body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.type {
+  font-size: var(--text-micro);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--secondary-container);
+}
+
+.title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--on-surface);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--on-surface-variant);
+}
+
+/* margin-top: auto keeps the buttons on a common line across the three cards,
+   whose titles run to different depths. */
+.detailBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 0.5rem 1.5rem;
+  box-shadow: inset 0 0 0 1px var(--primary);
+  font-size: var(--text-small);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: var(--outline);
+  opacity: 0.3;
+}
+
+.loadMore {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--text-small);
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -4,7 +4,7 @@ import PageShell from "@/components/PageShell";
 import DirectoryHeader from "@/components/opportunities/DirectoryHeader";
 import FilterSidebar from "@/components/opportunities/FilterSidebar";
 import StartupResults from "@/components/opportunities/StartupResults";
-import DirectoryFooter from "@/components/opportunities/DirectoryFooter";
+import InstitutionalFooter from "@/components/InstitutionalFooter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function OpportunitiesPage() {
         </div>
       </main>
       <span className={styles.connectionLine} aria-hidden="true" />
-      <DirectoryFooter />
+      <InstitutionalFooter />
     </PageShell>
   );
 }

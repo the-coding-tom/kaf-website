@@ -11,7 +11,9 @@ export const ICONS = [
   "check_circle",
   "chevron_left",
   "chevron_right",
+  "gavel",
   "grid_view",
+  "groups",
   "handshake",
   "hub",
   "keyboard_arrow_down",
@@ -23,11 +25,13 @@ export const ICONS = [
   "person_search",
   "public",
   "rocket_launch",
+  "schedule",
   "search",
   "shield",
   "verified",
   "verified_user",
   "video_call",
+  "videocam",
   "view_list",
 ] as const;
 

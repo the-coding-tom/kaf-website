@@ -11,7 +11,7 @@ const LINKS: { label: string; href: string | null }[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Opportunities", href: "/opportunities" },
-  { label: "Events", href: null },
+  { label: "Events", href: "/events" },
 ];
 
 type NavBarProps = {
@@ -54,9 +54,9 @@ export default function NavBar({ active = "/" }: NavBarProps) {
           <Icon name="search" size={20} />
           <span className={styles.searchText}>Search ecosystem...</span>
         </div>
-        <a className={styles.apply} href="#">
+        <Link className={styles.apply} href="/apply">
           Apply Now
-        </a>
+        </Link>
       </div>
     </header>
   );
