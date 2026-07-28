@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Icon from "./Icon";
 import styles from "./CallToAction.module.css";
 
@@ -12,9 +13,9 @@ export default function CallToAction() {
       </p>
 
       <div className={styles.buttons}>
-        <a className={styles.registerBtn} href="#">
+        <Link className={styles.registerBtn} href="/apply">
           Register Organization
-        </a>
+        </Link>
         <a className={styles.contactBtn} href="#">
           Contact Secretariat
           <Icon name="mail" size={20} />

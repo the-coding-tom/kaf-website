@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Icon from "./Icon";
 import styles from "./Hero.module.css";
 
@@ -19,13 +20,13 @@ export default function Hero() {
         </div>
 
         <div className={styles.buttons}>
-          <a className={styles.exploreBtn} href="#">
+          <Link className={styles.exploreBtn} href="/opportunities">
             Explore Startups
             <Icon name="arrow_forward" size={20} />
-          </a>
-          <a className={styles.roiBtn} href="#">
+          </Link>
+          <Link className={styles.roiBtn} href="/apply">
             Registration of Interest
-          </a>
+          </Link>
         </div>
       </div>
 
