@@ -1,0 +1,35 @@
+/*
+ * Main Content (nhbvf). Unlike the other pages this one runs its vertical
+ * padding at 40px rather than the usual 64, so the directory starts closer to
+ * the nav.
+ */
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2.5rem var(--section-padding-x);
+}
+
+/* flex-start keeps the filter rail at its own height — the default `stretch`
+   would run it down to match the much taller results column. */
+.contentRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+/* Connection Line (wjm2X): a hairline separating the directory from the
+   footer, held at 30% so it reads lighter than the footer's own top rule. */
+.connectionLine {
+  width: 100%;
+  height: 1px;
+  background: var(--outline-variant);
+  opacity: 0.3;
+}
+
+@media (max-width: 1000px) {
+  .contentRow {
+    flex-direction: column;
+  }
+}

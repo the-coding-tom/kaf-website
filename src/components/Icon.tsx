@@ -5,12 +5,18 @@
  */
 export const ICONS = [
   "arrow_forward",
+  "business_center",
   "calendar_today",
+  "check",
   "check_circle",
+  "chevron_left",
   "chevron_right",
+  "grid_view",
   "handshake",
   "hub",
+  "keyboard_arrow_down",
   "language",
+  "location_on",
   "mail",
   "open_in_new",
   "payments",
@@ -22,6 +28,7 @@ export const ICONS = [
   "verified",
   "verified_user",
   "video_call",
+  "view_list",
 ] as const;
 
 export type IconName = (typeof ICONS)[number];

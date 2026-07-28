@@ -10,7 +10,7 @@ import styles from "./NavBar.module.css";
 const LINKS: { label: string; href: string | null }[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Opportunities", href: null },
+  { label: "Opportunities", href: "/opportunities" },
   { label: "Events", href: null },
 ];
 
