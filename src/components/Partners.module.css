@@ -72,6 +72,14 @@
   background: var(--surface-container);
 }
 
+/* Scales to fit the box's height rather than its width, so marks of differing
+   proportions all sit at a consistent optical size. */
+.logoImage {
+  max-height: 2.5rem;
+  width: auto;
+  object-fit: contain;
+}
+
 .abbr {
   font-size: var(--text-body);
   font-weight: 700;
