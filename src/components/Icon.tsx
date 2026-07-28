@@ -40,10 +40,17 @@ type IconProps = {
    * glyph scales with the root size like every other length. Defaults to 24.
    */
   size?: number;
+  /** Draws the solid form of the glyph instead of the outline. */
+  filled?: boolean;
   className?: string;
 };
 
-export default function Icon({ name, size = 24, className }: IconProps) {
+export default function Icon({
+  name,
+  size = 24,
+  filled = false,
+  className,
+}: IconProps) {
   const rem = `${size / 16}rem`;
 
   return (
@@ -54,7 +61,13 @@ export default function Icon({ name, size = 24, className }: IconProps) {
           ? `material-symbols-outlined ${className}`
           : "material-symbols-outlined"
       }
-      style={{ fontSize: rem, width: rem, height: rem, flexShrink: 0 }}
+      style={{
+        fontSize: rem,
+        width: rem,
+        height: rem,
+        flexShrink: 0,
+        ...(filled ? { fontVariationSettings: '"FILL" 1' } : null),
+      }}
     >
       {name}
     </span>

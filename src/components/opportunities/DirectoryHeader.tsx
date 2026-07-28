@@ -21,7 +21,7 @@ export default function DirectoryHeader() {
       </div>
 
       <div className={styles.badge}>
-        <Icon name="verified" size={20} />
+        <Icon name="verified" size={20} filled />
         <span className={styles.badgeText}>Approved Participants</span>
       </div>
     </div>

@@ -150,9 +150,14 @@ img {
  * Material Symbols Outlined.
  * The glyph is selected by the ligature in the element's text content,
  * so `font-feature-settings: "liga"` must stay on.
+ *
+ * FILL is a variable axis: 0 draws the outline, 1 the solid form. It is pinned
+ * to 0 here so the default is deterministic rather than inherited; Icon's
+ * `filled` prop overrides it per glyph.
  */
 .material-symbols-outlined {
   font-family: var(--font-icons), "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
