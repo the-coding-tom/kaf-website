@@ -1,7 +1,12 @@
-/* Page Header (CcDHN): title block left, approval badge pinned to its baseline. */
+/*
+ * Page Header (CcDHN): title block left, approval badge right.
+ *
+ * The badge is top-aligned. The design has the row end-aligned, which drops the
+ * badge to the bottom of the title block — this deliberately differs.
+ */
 .header {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1.5rem;
   width: 100%;
