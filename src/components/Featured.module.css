@@ -1,0 +1,124 @@
+.featured {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background: var(--surface);
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: inset 0 0 0 1px var(--outline-variant);
+}
+
+/* Featured Image (oEmr5): 600 × 450. The card clips it, so it carries no
+   radius of its own. */
+.image {
+  position: relative;
+  flex: 0 0 auto;
+  width: 37.5rem;
+  height: 28.125rem;
+}
+
+.content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 2.5rem 4rem;
+}
+
+.tag {
+  padding: 0.25rem 1rem;
+  border-radius: 1.25rem;
+  background: var(--tertiary-fixed);
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--on-tertiary-container);
+}
+
+.name {
+  font-size: var(--text-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.17;
+  color: var(--primary);
+}
+
+.desc {
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.56;
+  color: var(--on-surface-variant);
+}
+
+.meta {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.metaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.metaLabel {
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--outline-variant);
+}
+
+.metaValue {
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--on-surface);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 0.125rem;
+  background: var(--primary);
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--on-primary);
+}
+
+/* Stacks at the same width as the hero, and for the same reason. */
+@media (max-width: 1200px) {
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .image {
+    width: 100%;
+    height: 21.25rem;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .content {
+    padding: 2rem 1.5rem;
+  }
+
+  .meta {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}

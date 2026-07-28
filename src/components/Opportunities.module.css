@@ -1,0 +1,101 @@
+.opportunities {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  background: var(--surface-container-high);
+}
+
+.title {
+  font-size: var(--text-title);
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--on-surface);
+}
+
+.grid {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  padding: 2.5rem;
+  background: var(--white);
+  /*
+   * Each card is keyed by a 4px accent rule on its leading edge. Drawn as an
+   * inset shadow rather than a border so it overlaps the padding exactly the
+   * way Pencil's inner strokes do, leaving the content box untouched. Held in
+   * px like the other strokes so the rule stays crisp.
+   */
+  box-shadow: inset 4px 0 0 0 var(--accent);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  color: var(--outline);
+}
+
+.tag {
+  font-family: var(--font-code);
+  font-size: var(--text-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--tag-color);
+}
+
+.cardTitle {
+  padding-bottom: 1rem;
+  font-size: var(--text-title);
+  font-weight: 600;
+  line-height: 1.33;
+  color: var(--on-surface);
+}
+
+.desc {
+  padding-bottom: 2.5rem;
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 1rem 0;
+  border-radius: 0.125rem;
+  font-size: var(--text-body);
+  font-weight: 700;
+}
+
+.buttonFilled {
+  background: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+.buttonOutlined {
+  box-shadow: inset 0 0 0 1px var(--primary);
+  color: var(--primary);
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

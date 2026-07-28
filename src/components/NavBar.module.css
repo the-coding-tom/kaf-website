@@ -1,0 +1,121 @@
+/*
+ * Pinned to the top of the viewport. The opaque --surface fill is load-bearing
+ * here — sections scroll underneath it — as is the z-index, since later
+ * sections paint over earlier ones in DOM order and would otherwise cover it.
+ *
+ * This only sticks because .page uses `overflow-x: clip` rather than
+ * `overflow: hidden`; see the note there before changing it.
+ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  width: 100%;
+  padding: 1rem var(--section-padding-x);
+  background: var(--surface);
+  box-shadow: inset 0 -1px 0 0 var(--outline-variant);
+}
+
+.logo {
+  font-size: var(--text-title);
+  font-weight: 800;
+  letter-spacing: -0.021em;
+  line-height: 1.33;
+  color: var(--on-surface);
+  white-space: nowrap;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.link {
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--on-surface-variant);
+}
+
+.activeTab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.activeLabel {
+  font-size: var(--text-body);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--on-surface);
+}
+
+/* Hairline accents stay in px so they render crisp at any root size. */
+.activeUnderline {
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--secondary-container);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: var(--surface-container-low);
+  box-shadow: inset 0 0 0 1px var(--outline-variant);
+  color: var(--outline);
+}
+
+.searchText {
+  font-size: var(--text-small);
+  font-weight: 400;
+  color: var(--outline);
+  white-space: nowrap;
+}
+
+.apply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  background: var(--secondary-container);
+  font-size: var(--text-small);
+  font-weight: 700;
+  color: var(--on-secondary-container);
+  white-space: nowrap;
+}
+
+@media (max-width: 1000px) {
+  .links {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .search {
+    display: none;
+  }
+
+  /* The wordmark plus the Apply button exceed the phone gutter, so the row
+     tightens rather than clipping. The wordmark itself steps down on its own:
+     it rides --text-title, which drops at this breakpoint. */
+  .nav {
+    gap: 1rem;
+  }
+}

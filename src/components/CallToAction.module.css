@@ -1,0 +1,77 @@
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  /* The CTA is inset much further than every other section: 272px, not 104px. */
+  padding: var(--section-padding-y) 17rem;
+  background: var(--surface);
+}
+
+.headline {
+  font-size: var(--text-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.17;
+  text-align: center;
+  color: var(--on-surface);
+}
+
+.subtitle {
+  width: 100%;
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.56;
+  text-align: center;
+  color: var(--on-surface-variant);
+}
+
+.buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.registerBtn,
+.contactBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* Drawn in from the design's 64px, matching the hero buttons. */
+  padding: 1rem 2.5rem;
+  border-radius: 0.25rem;
+  font-size: var(--text-lead);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.registerBtn {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+.contactBtn {
+  background: var(--surface-container-highest);
+  color: var(--on-surface);
+}
+
+/* Below the stacking breakpoint the extra inset costs more than it buys. */
+@media (max-width: 1000px) {
+  .cta {
+    padding-inline: var(--section-padding-x);
+  }
+}
+
+@media (max-width: 700px) {
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .registerBtn,
+  .contactBtn {
+    padding: 1rem 2rem;
+  }
+}
